@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date()-Math</title>
+</head>
+<body>
+
+<input type="number" id="idDate">
+<input type="button" value="Calculator" onclick="countDate()">
+
+<script>
+    function countDate() {
+        var now = new Date();
+
+        var xmasDay = new Date(1993, 11, 10); // khởi tạo ngày can tinh
+
+
+        var offset = now.getTime() - xmasDay.getTime(); // lấy độ lệch của 2 mốc thời gian, đơn vị tính là millisecond
+
+        var totalDays = Math.round(offset / 1000 / 60 / 60 / 24);
+
+        // countYear= now years - old years
+        let year = now.getFullYear();
+
+        let yearold = xmasDay.getFullYear();
+
+        alert("I live " + Math.round(year - yearold) + "Years");
+
+        alert("I live " + totalDays + " days");
+
+        var totalHours = Math.round(offset / 1000 / 60 / 60);
+
+        alert("I live " + totalHours + "hours");
+
+        var totalMinutes = Math.round(offset / 1000 / 60);
+
+        alert("I live " + totalMinutes + "minutes");
+
+        var totalSeconds = Math.round(offset / 1000);
+
+        alert("i live" + totalSeconds + " Seconds");
+
+    }
+</script>
+</body>
+</html>
