@@ -5,15 +5,28 @@
     <title>date()-Math</title>
 </head>
 <body>
+<div>
+    <p>Day</p>
+    <input type="number" id="idDate"  >
+    <p>Month</p>
+    <input type="number" id="idMonth">
+    <p>Year</p>
+    <input type="number" id="idYear">
+    <input type="button" value="Calculator" onclick="mydate()">
+</div>
 
-<input type="number" id="idDate">
-<input type="button" value="Calculator" onclick="countDate()">
 
 <script>
-    function countDate() {
+    function mydate() {
+        let date=parseInt(document.getElementById('idDate').value);
+        let month=parseInt(document.getElementById('idMonth').value);
+        let year=parseInt(document.getElementById('idYear').value);
+        countDate(year,month,date)
+    }
+    function countDate(year1,month,date) {
         var now = new Date();
 
-        var xmasDay = new Date(1993, 11, 10); // khởi tạo ngày can tinh
+        var xmasDay = new Date(year1,month, date); // khởi tạo ngày can tinh
 
 
         var offset = now.getTime() - xmasDay.getTime(); // lấy độ lệch của 2 mốc thời gian, đơn vị tính là millisecond
